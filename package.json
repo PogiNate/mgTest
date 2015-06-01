@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/PogiNate/mgTest#readme",
   "dependencies": {
+    "express": "^4.12.4",
     "gulp": "^3.9.0"
   }
 }
