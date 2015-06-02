@@ -4,7 +4,8 @@
   "description": "Testing web app integration",
   "main": "index.js",
   "scripts": {
-
+    "start": "node index.js",
+    "postinstall": "gulp prod"
   },
   "repository": {
     "type": "git",
