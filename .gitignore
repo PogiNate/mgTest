@@ -28,3 +28,7 @@ node_modules
 
 # IntelliJ files
 *.iml
+.idea/
+
+#Test databases
+*.db
