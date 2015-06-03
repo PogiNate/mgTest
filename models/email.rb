@@ -11,4 +11,6 @@ class Email
   property :bccRecipients, Text
 end
 
+Email.auto_migrate!
+
 
