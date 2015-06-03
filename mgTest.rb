@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'data_mapper'
 require 'sinatra/json'
-require 'models/email'
+require './models/email'
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/mgTest.db")
 
 get '/' do
