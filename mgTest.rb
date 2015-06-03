@@ -8,9 +8,13 @@ get '/' do
   'Welcome to Arriving Faclon. This app is meant to be used as an API endpoint.'
 end
 
-get '/email' do
+get '/email/:id' do
 # do something useful here.
-  json Email.first
+  json Email.get(params['id'])
+end
+
+get '/email/' do
+  json Email.all
 end
 # Save some email data. We'll get more complete soon enough.
 post '/email' do
