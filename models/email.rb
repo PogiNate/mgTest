@@ -9,8 +9,8 @@ class Email
   property :body, Text
   property :ccRecipients, Text
   property :bccRecipients, Text
+  property :subject, String
 end
 
-Email.auto_migrate!
 
 

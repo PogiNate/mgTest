@@ -12,3 +12,11 @@ get '/email' do
 # do something useful here.
   json Email.first
 end
+# Save some email data. We'll get more complete soon enough.
+post '/email' do
+  newEmail = Email.new
+  newEmail.sender = params[:sender]
+  newEmail.subject = params[:subject]
+  newEmail.body = params[:body]
+  newEmail.save!
+end
