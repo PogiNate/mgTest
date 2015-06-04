@@ -28,7 +28,13 @@ end
 
 # Send something!
 post '/outbox' do
+  to_send         = Email.new
+  to_send.to      = params[:to]
+  to_send.sender  = params[:from]
+  to_send.subject = params[:subject]
+  to_send.body    = params[:body]
 
+  send_message to_send
 end
 
 #send the default test message.

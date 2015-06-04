@@ -10,6 +10,7 @@ class Email
   property :ccRecipients, Text
   property :bccRecipients, Text
   property :subject, String
+  property :to, String
 end
 
 
