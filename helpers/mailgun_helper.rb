@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require '../models/email'
+require './models/email'
 require 'rest-client'
 
 module Sinatra
@@ -10,9 +10,13 @@ module Sinatra
       end
     end
     def send_default_message
-      RestClient.post "https://#{ENV['MG_API_KEY']}#{ENV['MG_PATH']}",
-          :from =>'',
-          :to=>'',
+      connect_string = "#{ENV['MG_CONNECT_STRING']}"
+      result = RestClient.post connect_string,
+          :from =>'Testing Mailgun<first_test_man@coals2newcastle.com>',
+          :to=> "#{ENV['DEFAULT_TO']}",
+          :subject=>"Hey there! Good Testin'!",
+          :text => 'This is a big ol\' email to let you know that you\'re using Mailgun appropriately. I hope you enjoy this email!'
+      result
     end
   end
   helpers Mailgun

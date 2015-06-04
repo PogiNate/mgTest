@@ -2,10 +2,11 @@ require 'sinatra'
 require 'data_mapper'
 require 'sinatra/json'
 require './models/email'
+require './helpers/mailgun_helper'
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/mgTest.db")
 
 get '/' do
-  'Welcome to Arriving Faclon. This app is meant to be used as an API endpoint.'
+  'Welcome to Arriving Falcon. This app is meant to be used as an API endpoint.'
 end
 
 get '/inbox/:id' do
@@ -32,5 +33,5 @@ end
 
 #send the default test message.
 get '/outbox' do
-
+  send_default_message
 end
