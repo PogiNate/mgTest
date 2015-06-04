@@ -13,14 +13,14 @@ get '/email/:id' do
   json Email.get(params['id'])
 end
 
-get '/email/' do
+get '/inbox' do
   json Email.all
 end
 # Save some email data. We'll get more complete soon enough.
 post '/email' do
-  newEmail = Email.new
-  newEmail.sender = params[:sender]
-  newEmail.subject = params[:subject]
-  newEmail.body = params[:body]
-  newEmail.save!
+  new_email = Email.new
+  new_email.sender = params[:sender]
+  new_email.subject = params[:subject]
+  new_email.body = params[:body]
+  new_email.save!
 end
