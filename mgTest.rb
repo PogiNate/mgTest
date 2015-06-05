@@ -21,9 +21,11 @@ end
 post '/inbox' do
   new_email = Email.new
   new_email.sender = params[:sender]
-  new_email.to = params[:recipient]
+  new_email.to = params[:To]
   new_email.subject = params[:subject]
   new_email.body = params["body-plain"]
+  new_email.ccRecipients = params[:Cc]
+  new_email.recipient = params[:recipient]
   new_email.save!
 end
 
