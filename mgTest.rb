@@ -21,8 +21,9 @@ end
 post '/inbox' do
   new_email = Email.new
   new_email.sender = params[:sender]
+  new_email.to = params[:recipient]
   new_email.subject = params[:subject]
-  new_email.body = params[:body]
+  new_email.body = params["body-plain"]
   new_email.save!
 end
 
@@ -41,3 +42,4 @@ end
 get '/outbox' do
   send_default_message
 end
+
