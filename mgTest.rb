@@ -10,7 +10,6 @@ get '/' do
 end
 
 get '/inbox/:id' do
-# do something useful here.
   json Email.get(params['id'])
 end
 
