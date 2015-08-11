@@ -12,6 +12,9 @@ class Email
   property :subject, String
   property :to, Text
   property :recipient, String
+  property :timestamp, Numeric
+  property :token, String
+  property :signature, String
 end
 
 

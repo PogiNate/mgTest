@@ -19,12 +19,15 @@ end
 # Save some email data. We'll get more complete soon enough.
 post '/inbox' do
   new_email = Email.new
-  new_email.sender = params[:sender]
-  new_email.to = params[:To]
-  new_email.subject = params[:subject]
-  new_email.body = params["body-plain"]
+  new_email.sender       = params[:sender]
+  new_email.to           = params[:To]
+  new_email.subject      = params[:subject]
+  new_email.body         = params["body-plain"]
   new_email.ccRecipients = params[:Cc]
-  new_email.recipient = params[:recipient]
+  new_email.recipient    = params[:recipient]
+  new_email.timestamp    = params[:timestamp]
+  new_email.token        = params[:token]
+  new_email.signature    = params[:signature]
   new_email.save!
 end
 
